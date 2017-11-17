@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
         @profile = @user.profile
         if @profile.update_attributes(profile_params)
             flash[:success]="Profile Updates!"
-            redirect_to user_path(params[:user_id])
+            redirect_to user_path( params[:user_id] )
         else
             render action: :edit
         end
