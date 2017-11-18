@@ -7,12 +7,16 @@
                     <div class="well row <%= cycle('white','') %>">
                         <div class="col-sm-4 text center">
                             <% if user.profile.avatar %>
-                                <%= image_tag user.profile.avatar.url(:thumb) %>
+                                <%= link_to user do %>
+                                    <%= image_tag user.profile.avatar.url(:thumb), class: 'user-index-avatar' %>
+                                <% end %>
                             <% end %>
                         </div>
                         <div>
-                           <h2><%= user.profile.first_name %> <%= user.profile.last_name %></h2>
-                           <p><%= user.profile.job_title %></p>
+                            <%= link_to user do %>
+                                <h2><%= user.profile.first_name %> <%= user.profile.last_name %></h2>
+                            <% end %>
+                            <p><%= user.profile.job_title %></p>
                         </div>
                     </div>
                 </li>
